@@ -1,0 +1,20 @@
+{
+  "nav_about": "Sobre mi",
+  "nav_portfolio": "Portafoli",
+  "nav_contact": "Contacte",
+  "hero_title": "Portafoli",
+  "about_title": "Hola!",
+  "about_p1": "Soc la Laura, una ment creativa en formació, actualment cursant el Grau en Disseny, Animació i Art Digital al CITM, UPC. La meva formació m'ha permès explorar diverses facetes de l'art digital.",
+  "about_p2": "M'atrau el repte de conceptualitzar i desenvolupar personatges únics, donant-los no només una aparença distintiva sinó també una personalitat tangible. Al mateix temps, gaudeixo creant els mons i props que els envolten, assegurant que cada element contribueixi a la narrativa visual.",
+  "about_p3": "I, sobretot, la meva veritable fascinació rau en l'animació 2D. La fluïdesa del moviment, l'expressivitat i la capacitat d'explicar històries a través de la seqüència d'imatges em motiven a aprofundir en aquest art cada dia.",
+  "about_p4": "Soc adaptable a diversos estils artístics, la qual cosa em permet aportar un enfocament versàtil a diferents projectes. Espero amb interès aplicar els meus coneixements i passió en projectes emocionants, contribuint amb la meva visió artística i entusiasme per aprendre i créixer dins la indústria.",
+  "portfolio_title": "Coses que se'm donen bé",
+  "category_2d": "Animació 2D",
+  "category_character": "Disseny de Personatges",
+  "category_background": "Fons",
+  "contact_title": "Contacta amb mi",
+  "contact_name": "El teu nom",
+  "contact_email": "El teu correu electrònic",
+  "contact_message": "Missatge",
+  "contact_send": "Enviar"
+}

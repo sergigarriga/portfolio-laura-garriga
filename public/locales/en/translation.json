@@ -1,0 +1,20 @@
+{
+  "nav_about": "About Me",
+  "nav_portfolio": "Portfolio",
+  "nav_contact": "Contact",
+  "hero_title": "Portfolio",
+  "about_title": "Hello!",
+  "about_p1": "Hello! I'm Laura, a creative mind in training, currently pursuing a Bachelor's Degree in Design, Animation, and Digital Arts at CITM, UPC. My training has allowed me to explore various facets of digital art.",
+  "about_p2": "I'm drawn to the challenge of conceptualizing and developing unique characters, giving them not only a distinctive appearance but also a tangible personality. At the same time, I enjoy creating the worlds and props that surround them, ensuring each element contributes to the visual narrative.",
+  "about_p3": "And, above all, my true fascination lies in 2D animation. The fluidity of movement, expressiveness, and ability to tell stories through the sequence of images motivate me to delve deeper into this art every day.",
+  "about_p4": "I'm adaptable to various artistic styles, allowing me to bring a versatile approach to different projects. I look forward to applying my knowledge and passion to exciting endeavors, contributing my artistic vision and enthusiasm for learning and growing within the industry.",
+  "portfolio_title": "Things I'm Good At",
+  "category_2d": "2D Animation",
+  "category_character": "Character Design",
+  "category_background": "Backgrounds",
+  "contact_title": "Contact Me",
+  "contact_name": "Your Name",
+  "contact_email": "Your Email",
+  "contact_message": "Message",
+  "contact_send": "Send"
+}

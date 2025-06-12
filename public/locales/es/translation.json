@@ -1,0 +1,20 @@
+{
+  "nav_about": "Sobre mí",
+  "nav_portfolio": "Portfolio",
+  "nav_contact": "Contacto",
+  "hero_title": "Portfolio",
+  "about_title": "¡Hola!",
+  "about_p1": "Soy Laura, una mente creativa en formación, actualmente cursando el Grado en Diseño, Animación y Arte Digital en el CITM, UPC. Mi formación me ha permitido explorar varias facetas del arte digital.",
+  "about_p2": "Me atrae el reto de conceptualizar y desarrollar personajes únicos, dándoles no solo una apariencia distintiva sino también una personalidad tangible. Al mismo tiempo, disfruto creando los mundos y props que los rodean, asegurando que cada elemento contribuya a la narrativa visual.",
+  "about_p3": "Y, sobre todo, mi verdadera fascinación reside en la animación 2D. La fluidez del movimiento, la expresividad y la capacidad de contar historias a través de la secuencia de imágenes me motivan a profundizar en este arte cada día.",
+  "about_p4": "Soy adaptable a varios estilos artísticos, lo que me permite aportar un enfoque versátil a diferentes proyectos. Espero con interés aplicar mis conocimientos y pasión en proyectos emocionantes, contribuyendo con mi visión artística y entusiasmo por aprender y crecer en la industria.",
+  "portfolio_title": "Cosas que se me dan bien",
+  "category_2d": "Animación 2D",
+  "category_character": "Diseño de Personajes",
+  "category_background": "Fondos",
+  "contact_title": "Contacta conmigo",
+  "contact_name": "Tu nombre",
+  "contact_email": "Tu email",
+  "contact_message": "Mensaje",
+  "contact_send": "Enviar"
+}
