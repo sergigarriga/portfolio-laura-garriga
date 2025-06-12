@@ -3,14 +3,10 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-
-// 1. Importa el archivo de estilos principal donde se carga Tailwind CSS.
 import './styles/index.css';
-
-// 2. Importa la configuración de i18n para que se inicialice.
 import './i18n';
+import { HelmetProvider } from 'react-helmet-async';
 
-// (Opcional) Un componente visualmente agradable para la pantalla de carga.
 const LoadingFallback = () => (
   <div style={{ 
     display: 'flex', 
@@ -26,12 +22,12 @@ const LoadingFallback = () => (
   </div>
 );
 
-// 3. Renderiza la aplicación principal.
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* 4. Suspense se encarga de mostrar 'fallback' mientras i18n carga las traducciones. */}
-    <Suspense fallback={<LoadingFallback />}>
-      <App />
-    </Suspense>
+    <HelmetProvider> {/* <-- ENVUELVE TODO */}
+      <Suspense fallback={<LoadingFallback />}>
+        <App />
+      </Suspense>
+    </HelmetProvider>
   </React.StrictMode>
 );

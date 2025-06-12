@@ -9,21 +9,15 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    const scroller = document.querySelector('.overflow-y-auto');
     const handleScroll = () => {
-      // Usamos el scroll del div de la app, no de window
-      const scroller = document.querySelector('.overflow-y-auto');
       if (scroller) {
         setScrolled(scroller.scrollTop > 50);
       }
     };
-    const scroller = document.querySelector('.overflow-y-auto');
-    if (scroller) {
-        scroller.addEventListener('scroll', handleScroll);
-    }
+    if (scroller) scroller.addEventListener('scroll', handleScroll);
     return () => {
-        if (scroller) {
-            scroller.removeEventListener('scroll', handleScroll);
-        }
+      if (scroller) scroller.removeEventListener('scroll', handleScroll);
     }
   }, []);
 
@@ -37,10 +31,24 @@ const Header = () => {
       <div className={`font-display text-3xl transition-colors ${scrolled ? 'text-accent' : 'text-white drop-shadow-lg'}`}>
         Laura Garriga
       </div>
-      <nav className="flex items-center gap-4 md:gap-6 pr-2 md:pr-6">
-        <a href="#about" className={`transition-colors hover:text-accent dark:hover:text-accent ${scrolled ? 'text-stone dark:text-cream' : 'text-white drop-shadow-md'}`}>{t('nav_about')}</a>
-        <a href="#portfolio" className={`transition-colors hover:text-accent dark:hover:text-accent ${scrolled ? 'text-stone dark:text-cream' : 'text-white drop-shadow-md'}`}>{t('nav_portfolio')}</a>
-        <a href="#contact" className={`transition-colors hover:text-accent dark:hover:text-accent ${scrolled ? 'text-stone dark:text-cream' : 'text-white drop-shadow-md'}`}>{t('nav_contact')}</a>
+      <nav className="flex items-center gap-2 md:gap-4">
+        <a href="#about" aria-label={t('nav_about')} className={`transition-colors text-sm md:text-base hover:text-accent dark:hover:text-accent ${scrolled ? 'text-stone dark:text-cream' : 'text-white drop-shadow-md'}`}>{t('nav_about')}</a>
+        <a href="#portfolio" aria-label={t('nav_portfolio')} className={`transition-colors text-sm md:text-base hover:text-accent dark:hover:text-accent ${scrolled ? 'text-stone dark:text-cream' : 'text-white drop-shadow-md'}`}>{t('nav_portfolio')}</a>
+        <a href="#contact" aria-label={t('nav_contact')} className={`transition-colors text-sm md:text-base hover:text-accent dark:hover:text-accent ${scrolled ? 'text-stone dark:text-cream' : 'text-white drop-shadow-md'}`}>{t('nav_contact')}</a>
+        
+        {/* --- NUEVO: Botón de Descargar CV --- */}
+        <a 
+          href="/CV-Laura-Garriga.pdf" // Asegúrate de que este nombre coincide con tu archivo en la carpeta 'public'
+          download
+          className="ml-2 text-sm md:text-base font-semibold border-2 rounded-full px-4 py-1 transition-all duration-300
+                     border-accent text-accent hover:bg-accent hover:text-white
+                     dark:border-accent dark:text-accent dark:hover:bg-accent dark:hover:text-navy-dark"
+        >
+          CV
+        </a>
+        
+        <div className="h-6 w-px bg-stone/30 dark:bg-cream/30 mx-2"></div>
+        
         <LanguageSwitcher />
         <ThemeToggle />
       </nav>
