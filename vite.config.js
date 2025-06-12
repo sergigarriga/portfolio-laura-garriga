@@ -6,5 +6,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // Añade esta línea. Reemplaza 'portfolio-laura-garriga' con el nombre de tu repositorio.
-  base: '/portfolio-laura-garriga/', 
+  base: '/portfolio-laura-garriga/',
 })
