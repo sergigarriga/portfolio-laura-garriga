@@ -1,37 +1,32 @@
 // src/components/Portfolio.jsx
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { portfolioData } from '../data/portfolioData'; // <-- Datos de tus proyectos
+import { portfolioData } from '../data/portfolioData';
 import PortfolioModal from './PortfolioModal';
-import { motion } from 'framer-motion';
+import { PortfolioCard } from './PortfolioCard'; // <-- Importamos la nueva tarjeta
 
 const Portfolio = () => {
   const { t } = useTranslation();
   const [selectedProject, setSelectedProject] = useState(null);
-  const categories = [...new Set(portfolioData.map(p => p.category))];
 
   return (
-    <section id="portfolio" className="py-20 px-4 container mx-auto">
-      <h2 className="text-5xl font-display text-center mb-12 text-accent">{t('portfolio_title')}</h2>
+    <section id="portfolio" className="py-24 px-4 container mx-auto relative z-10">
+      <h2 className="font-display text-7xl lg:text-8xl text-center mb-4 text-navy-dark">
+        Proyectos
+      </h2>
+      <p className="text-center text-stone-light max-w-2xl mx-auto mb-16">
+        Cada proyecto es un mundo nuevo. Aquí te muestro algunos de los universos que he tenido el placer de crear, desde el concepto inicial hasta la animación final.
+      </p>
       
-      {/* Puedes agregar filtros por categoría aquí si lo deseas */}
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {portfolioData.map((project) => (
-          <motion.div
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {portfolioData.map((project, index) => (
+          <PortfolioCard
             key={project.id}
-            className="cursor-pointer overflow-hidden rounded-lg shadow-lg group"
-            onClick={() => setSelectedProject(project)}
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-            layoutId={`card-container-${project.id}`}
-          >
-            <img src={project.thumbnail} alt={project.title} className="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-500" />
-            <div className="p-4 bg-white">
-              <h3 className="font-bold text-xl">{project.title}</h3>
-              <p className="text-sm text-gray-600">{t(`category_${project.category}`)}</p>
-            </div>
-          </motion.div>
+            project={project}
+            index={index}
+            t={t}
+            onCardClick={setSelectedProject}
+          />
         ))}
       </div>
 

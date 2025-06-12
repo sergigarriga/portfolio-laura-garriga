@@ -4,14 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        'navy-light': '#809bce', // Un azul suave del cielo de tu imagen
-        'cream': '#fbf5e9',      // Un fondo cremoso
-        'stone': '#4b4237',      // Texto oscuro pero no negro puro
-        'accent': '#e56b6f',      // Un acento rojizo como en tus diseños
+        'navy-light': '#809bce',
+        'navy-dark': '#3a4a6b', // NUEVO
+        'cream': '#fbf5e9',
+        'stone': '#4b4237',
+        'stone-light': '#8a7d6e', // NUEVO
+        'accent': '#e56b6f',
       },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
-        display: ['Caveat', 'cursive'], // Fuente artística para títulos
+        display: ['Caveat', 'cursive'], 
       },
     },
   },

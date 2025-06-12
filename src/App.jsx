@@ -1,6 +1,9 @@
 // src/App.jsx
 
 import React from 'react';
+// CAMBIO: Importamos 'motion' además de 'useScroll'
+import { motion, useScroll } from 'framer-motion';
+import { ArtThread } from './components/ArtThread';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,21 +13,26 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 
 function App() {
+  const { scrollYProgress } = useScroll();
+
   return (
-    // La clase 'bg-cream' y otras deberían funcionar si Tailwind está bien configurado
-    <div className="bg-cream text-stone font-sans">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Portfolio />
-        <Awards />
-        <ContactForm />
-      </main>
-      <Footer />
-    </div>
+    // CAMBIO: El div principal ahora es un motion.div para asegurar la conexión con useScroll
+    <motion.div className="bg-cream text-stone font-sans">
+      <ArtThread scrollYProgress={scrollYProgress} />
+      
+      <div className="relative z-10">
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Portfolio />
+          <Awards />
+          <ContactForm />
+        </main>
+        <Footer />
+      </div>
+    </motion.div>
   );
 }
 
-// ESTA ES LA LÍNEA MÁS IMPORTANTE PARA SOLUCIONAR EL ERROR
 export default App;
