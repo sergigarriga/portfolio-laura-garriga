@@ -1,0 +1,49 @@
+name: Deploy Portfolio to GitHub Pages
+
+# Se ejecuta cada vez que subes cambios a la rama 'main'
+on:
+  push:
+    branches: [ "main" ]
+
+# Permite que el workflow tenga permisos para escribir en el entorno de GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Descarga el código de tu repositorio
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Instala Node.js para poder construir el proyecto
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18 # Usa una versión LTS (Long Term Support)
+
+      # 3. Instala todas las dependencias del proyecto
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Construye la versión final de la web (creará una carpeta 'dist')
+      - name: Build
+        run: npm run build
+
+      # 5. Prepara la página para el despliegue
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 6. Sube los archivos construidos para que GitHub Pages los use
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      # 7. Despliega la web
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
