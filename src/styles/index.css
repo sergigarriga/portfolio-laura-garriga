@@ -1,9 +1,41 @@
-/* src/styles/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* NUEVO: Scroll suave para toda la página */
 html {
   scroll-behavior: smooth;
+}
+
+/* Base styles for light/dark mode transition */
+body {
+  @apply bg-cream text-stone transition-colors duration-500;
+}
+
+.dark body {
+  @apply bg-navy-dark text-cream/90;
+}
+
+
+/* Gradient text animation */
+.animated-gradient-text {
+  background: linear-gradient(45deg, #e56b6f, #809bce, #3a4a6b);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 5s ease-in-out infinite;
+}
+
+.dark .animated-gradient-text {
+  background: linear-gradient(45deg, #e56b6f, #809bce, #fbf5e9);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 5s ease-in-out infinite;
+}
+
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
